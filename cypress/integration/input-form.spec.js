@@ -21,6 +21,7 @@ describe('Input form', () => {
     it('Add a new todo on submit', () => {
       const itemText = 'Buy eggs';
       // 해당 api를 가진 서버가 없어도 cypress에서 아래와 같이 서버를 임의로 정의해줘서 사용가능하다.
+      // post api 요청 성공의 경우에 대한 case
       cy.route('POST', 'api/todos', {
         name: itemText,
         id: 1,
@@ -36,6 +37,7 @@ describe('Input form', () => {
     });
 
     it('Shows an error mesage on a failed submission', () => {
+      // post api 요청 실패의 경우에 대한 case
       cy.route({
         url: '/api/todos',
         method: 'POST',
