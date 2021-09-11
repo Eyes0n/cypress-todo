@@ -40,3 +40,24 @@ This repository is the starting point for an official Cypress tutorial. We encou
      response: {},
    });
    ```
+
+## Cypress Command 만들기
+
+support/commands.js 파일에서 `Cypress.Commands.add('함수명', callback)` 으로 추가
+
+- seedAndVisit() 명령 : 해당 주소로 이동하여 초기 todos를 load한다.
+
+  > 예제에서는 input-form의 경우와 app-init경우를 나누어서 test 코드 작성
+  >
+  > - input-form의 경우 초기 데이터가 **없는** 경우에 대한 test case
+  >   `cy.seedAndVisit([])`호출
+  > - app-init의 경우 초기 데이터가 **있는** 경우에 대한 test case
+  >   `cy.seedAndVisit()`호출
+
+  ```js
+  Cypress.Commands.add('seedAndVisit', (seedData = 'fixture:todos') => {
+    cy.server();
+    cy.route('GET', '/api/todos', seedData);
+    cy.visit('/');
+  });
+  ```
