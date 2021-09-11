@@ -1,12 +1,12 @@
 [
   {
     "id": 1,
-    "name": "Buy Bread",
+    "name": "Buy Milk",
     "isComplete": false
   },
   {
     "id": 2,
-    "name": "Buy Bread",
+    "name": "Buy Eggs",
     "isComplete": false
   },
   {
