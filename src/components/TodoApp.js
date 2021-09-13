@@ -45,6 +45,9 @@ export default class TodoApp extends Component {
   }
 
   render() {
+    const remaining = this.state.todos.filter(
+      (todo) => !todo.isComplete
+    ).length;
     return (
       <Router>
         <div>
@@ -60,7 +63,7 @@ export default class TodoApp extends Component {
           <section className="main">
             <TodoList todos={this.state.todos} />
           </section>
-          <Footer />
+          <Footer remaining={remaining} />
         </div>
       </Router>
     );
