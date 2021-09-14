@@ -32,11 +32,12 @@ describe('List items', () => {
 
   it.only('Marks an incomplete item complete', () => {
     cy.fixture('todos').then((todos) => {
-      const target = Cypress._.head(todos); // '_' : lodash
+      // '_' : Cypress bundle lodash
+      const target = Cypress._.head(todos); // _.head() : Gets the first element of array.
       cy.route(
         'PUT',
         `/api/todos/${target.id}`,
-        Cypress._.merge(target, { isComplete: true })
+        Cypress._.merge(target, { isComplete: true }) // _.merge(obj, source) : merge source to obj
       );
     });
 

@@ -54,7 +54,7 @@ This repository is the starting point for an official Cypress tutorial. We encou
   ```
 
 - `as()`로 alias(별칭) 만들기 '@' prefix를 사용하여 cy.get() || cy.wait() Commands 내에서 사용
-  링크 : https://docs.cypress.io/api/commands/as
+  [about "as" info in cypress]('https://docs.cypress.io/api/commands/as')
 
   ```js
   // as 사용 전 list를 참조하여 사용
@@ -112,3 +112,13 @@ support/commands.js 파일에서 `Cypress.Commands.add('함수명', callback)` �
     cy.visit('/');
   });
   ```
+
+## Cypress 객체로 다양한 bundles를 제공함
+
+- `Cypress._` ([lodash](https://lodash.com/docs/))
+  - Cypress.\_.head() 사용
+  - Cypress.\_.merge() 사용
+- `Cypress.$` (jQuery)
+- `Cypress.minimatch` (minimatch.js)
+- `Cypress.Blob` (Blob utils)
+- `Cypress.Promise` (Bluebird)
