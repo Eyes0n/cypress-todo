@@ -76,13 +76,13 @@ This repository is the starting point for an official Cypress tutorial. We encou
     .and('not.contain', 'Milk');
   ```
 
-## 프론트에서 api test 하기
+## API TEST 하기
 
-1. api 임의 서버 만들기 `cy.server()`
-2. 요청 api에 따른 응답 api 만들기
+1. api 임의 서버 만들기 [cy.server()](https://docs.cypress.io/api/commands/server)
+2. 요청 api에 따른 응답 api 만들기 [cy.route()](https://docs.cypress.io/api/commands/route)
 
    ```js
-   cy.route('HTTP Method', 'Request API', { Obj Response });
+   cy.route('HTTP Method', 'Request URL API', Response);
 
    cy.route({
      url: '/api/todos',
@@ -91,6 +91,9 @@ This repository is the starting point for an official Cypress tutorial. We encou
      response: {},
    });
    ```
+
+3. `cy.intercept()` 사용하기
+   cy.server() and cy.route() are deprecated in Cypress 6.0.0.
 
 ## Cypress Command 만들기
 
