@@ -2,6 +2,8 @@
 
 This repository is the starting point for an official Cypress tutorial. We encourage you to clone this repo and follow along.
 
+## [Cypress API](https://docs.cypress.io/api/table-of-contents)
+
 - `describe()`와 `context()`은 동일한 의미 및 기능
 
 - `it()`과 `specify()`은 동일한 의미 및 기능
@@ -53,8 +55,8 @@ This repository is the starting point for an official Cypress tutorial. We encou
     .click();
   ```
 
-- `as()`로 alias(별칭) 만들기 '@' prefix를 사용하여 cy.get() || cy.wait() Commands 내에서 사용
-  [about "as" info in cypress]('https://docs.cypress.io/api/commands/as')
+- [cy.as()]('https://docs.cypress.io/api/commands/as')
+  alias(별칭) 만들기 '@' prefix를 사용하여 cy.get() || cy.wait() Commands 내에서 사용
 
   ```js
   // as 사용 전 list를 참조하여 사용
@@ -74,6 +76,31 @@ This repository is the starting point for an official Cypress tutorial. We encou
   cy.get('@list') // '@'접두어 붙여서 호출
     .should('have.length', 3)
     .and('not.contain', 'Milk');
+  ```
+
+- [cy.contains()](https://docs.cypress.io/api/commands/contains)
+  text를 포함하는 DOM element를 반환
+
+- [cy.wrap()](https://docs.cypress.io/api/commands/wrap)
+  wrap의 매개변수로 전달된 obj를 생성
+  호출된 obj를 생성
+
+- [cy.wait()](https://docs.cypress.io/api/commands/wait)
+  특정 시간(ex. setTimeout)이나 리소스(ex. API응답)가 해결될 때까지 기다리기
+
+- [cy.each()](https://docs.cypress.io/api/commands/each)
+  배열과 같은 구조(길이 속성이 있는 배열 또는 객체)에서 콜백 함수를 반복 실행
+  `cy.each( callbackFunc )`
+
+- [cy.request()](https://docs.cypress.io/api/commands/request)
+  HTTP 요청 만들기
+
+  ```js
+  cy.request(url);
+  cy.request(url, body);
+  cy.request(method, url);
+  cy.request(method, url, body);
+  cy.request(options);
   ```
 
 ## API TEST 하기
